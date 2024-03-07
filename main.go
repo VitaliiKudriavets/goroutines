@@ -13,7 +13,6 @@ func main() {
 	fmt.Println(<-ch)
 	fmt.Println(<-ch)
 	fmt.Println(<-ch)
-	fmt.Println(<-ch)
 
 	Say("The End")
 }
@@ -23,7 +22,7 @@ func Say(word string) {
 }
 
 func sayHello(exit chan int) {
-	for i := 0; i <= 5; i++ {
+	for i := 0; i < 5; i++ {
 		time.Sleep(100 * time.Millisecond)
 		exit <- i
 	}
